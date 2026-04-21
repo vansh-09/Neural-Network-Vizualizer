@@ -1,17 +1,26 @@
+#!/bin/bash
+
 echo "Enter n:"
 read n
 
 a=0
 b=1
 
-echo "Fibonacci Series:"
-echo $a
-echo $b
-
-for ((i=2; i<$n; i++))
+echo "Fibonacci:"
+for ((i=0;i<n;i++))
 do
-    c=$((a+b))
-    echo $c
+    echo -n "$a "
+    temp=$((a+b))
     a=$b
-    b=$c
+    b=$temp
+done
+
+echo -e "\nPattern:"
+for ((i=1;i<=n;i++))
+do
+    for ((j=1;j<=i;j++))
+    do
+        echo -n "$j"
+    done
+    echo
 done
